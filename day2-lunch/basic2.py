@@ -5,7 +5,7 @@ f=open(filename)
 
 count=0
 for i in f:
-    if "HO" in i:
+    if "H0" in i:
         count+=1
         
 print "Number of perfect hits:", count
