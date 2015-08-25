@@ -1,0 +1,9 @@
+1.  cut -d "     " -f3 SRR072893.sam | sort | uniq -c
+
+2.  cut -d "     " -f4 SRR072893.sam | sort | uniq -c | sort -g
+
+3.  cd /Users/cmdb/qbb2015/stringtie
+    grep FBtr0331261 SRR072*/t_data.ctab | awk '{total=total+$12;count=count+1} END {print total/count}'        #mean FPKM is 21.0987
+	grep FBtr0331261 SRR072*/t_data.ctab | awk '{total2=total2+($12-21.0987)*($12-21.0987);count2=count2+1} END {print total2/count2}'      #variation is 2040.36, so standard deviation is 	#sqrt(2040.36)=45.17
+	
+4.  
