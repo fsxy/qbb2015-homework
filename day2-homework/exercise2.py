@@ -9,7 +9,7 @@ df=pd.read_table(annotation,comment='#',header=None)
 
 df.columns=["chromosomes","database","type","start","end","score","strand","frame","attributes"]
 
-filter1=df["attributes"].str.contains("Sxl")
+filter1=df["attributes"].str.contains("Sxl")   #or: filter1=df[].("Sxl")
 df2=df[filter1]
 filter2=df2["type"].str.contains("transcript")
 
