@@ -36,14 +36,16 @@ for sample_male_replicate in metadata2[metadata2["sex"]=="male"]["sample"]:
 plt.figure()
 line1, =plt.plot(Sxl_female)
 line2, =plt.plot(Sxl_male)
-line3, =plt.plot(Sxl_female_replicate)
-line4, =plt.plot(Sxl_male_replicate)
+line3, =plt.plot(Sxl_female_replicate,'o')
+line4, =plt.plot(Sxl_male_replicate,'o')
 
-plt.legend((line1,line2,line3,line4),('female','male','female_replicate','male_replicate'),loc='best')
+plt.legend((line1,line2,line3,line4),('female','male','female_replicate','male_replicate'),loc='best',bbox_to_anchor=(1.05,1),borderaxespad=0.)
 
 plt.xlabel("developmental stage")
 plt.ylabel("mRNA abundance (RPKM)")
 plt.xticks(range(len(Sxl_female)),["10","11","12","13","14A","14B","14C","14D"])
+plt.yticks(range(0,350,50))
+plt.title("Timecourse of Sxl")
 plt.savefig("timecourse.png")
 
 
